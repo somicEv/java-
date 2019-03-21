@@ -1,0 +1,68 @@
+#类的基础
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [类的基础](#类的基础)
+	- [类的组成](#类的组成)
+		- [类变量](#类变量)
+		- [类函数](#类函数)
+		- [实例变量](#实例变量)
+
+--------------------------
+##类的组成
+>类在大多数情况下被看做是函数的容器，但更多的是表示自定义数据类型。  
+>若将类看做是数据类型的话，则是由包含的属性以及该类型可以进行的操作组成。
+
+一个简单的类是由5部分组成：  
+>1、初始化类时使用的构造函数  
+>2、类型本身包含的属性，通过类变量实现  
+>3、类型本身包含的操作，通过类函数实现  
+>4、实例包含的属性，通过实例变量实现  
+>5、实例包含的操作，通过实例函数实现
+```java
+public class Test(){
+  private int a;
+  private int b;
+
+  public static final c = 123;
+
+  public Test(){}
+
+  public Test(a,b){
+    this.a = a;
+    this.b = b;
+  }
+
+  public void show(){
+    System.out.println("a:" + a + " " + "b:" + b);
+  }
+}
+```
+###类变量
+1、通过类名进行访问。  
+2、一般在类加载时只加载一次。  
+3、类型前一般由**static**关键字修饰。  
+4、经常用于表示常量:
+```java
+public static final int pi = 3.14;
+```
+
+###类函数
+1、通过类名访问。  
+2、由**static**关键字修饰。   
+3、类方法只能访问类变量，不能访问实例变量，只能调用类方法，不能调用实例方法。  
+```java
+public static void test(){}
+```
+
+###实例变量  
+1、通过对象或者**this**关键字访问。  
+2、一般是用**private**关键字修饰，并通过get/set方法来获取和修改。  
+```java
+  private int a;
+```
+
+###实例方法
+1、通过对象或者**this**关键字访问。   
+```java
+public void test(){}
+```
